@@ -1,0 +1,86 @@
+/* General styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+header {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+/* Main layout */
+main {
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
+/* Section styles */
+.section {
+    position: relative;
+    flex: 1 1 calc(33.33% - 20px); /* For desktop: 3 sections, equal width */
+    background-color: lightblue;
+    padding: 20px;
+    border: 1px solid black;
+    box-sizing: border-box;
+}
+
+.section .title {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff5722;
+    padding: 5px 10px;
+    color: white;
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+/* Typography */
+section p {
+    margin-top: 30px;
+    font-size: 1em;
+    line-height: 1.6;
+}
+
+/* Media Queries */
+
+/* Desktop: 992px and above */
+@media (min-width: 992px) {
+    .section {
+        flex: 1 1 calc(33.33% - 20px); /* 3 sections in a row */
+    }
+}
+
+/* Tablet: 768px to 991px */
+@media (max-width: 991px) and (min-width: 768px) {
+    .section {
+        flex: 1 1 calc(50% - 20px); /* First two sections in a row, third section below */
+    }
+
+    .section:nth-child(3) {
+        flex: 1 1 100%; /* Third section takes up the full width */
+    }
+}
+
+/* Mobile: 767px and below */
+@media (max-width: 767px) {
+    .section {
+        flex: 1 1 100%; /* All sections stack vertically */
+    }
+}
